@@ -27,18 +27,18 @@ from selenium import webdriver
 #     yield
 #     chrome_driver.close()
 
-@pytest.fixture(params=["chrome", "firefox"], scope="class")
-def driver_init(request):
-    if request.param == "chrome":
-        options = webdriver.ChromeOptions()
-        options.add_argument("--headless")
-        web_driver = webdriver.Chrome(
-            executable_path=r"chromedriver", options=options)
-    if request.param == "firefox":
-        options = webdriver.FirefoxOptions()
-        options.add_argument("--headless")
-        web_driver = webdriver.Firefox(
-            executable_path=r"geckodriver", options=options)
-    request.cls.driver = web_driver
-    yield
-    web_driver.close()
+# @pytest.fixture(params=["chrome", "firefox"], scope="class")
+# def driver_init(request):
+#     if request.param == "chrome":
+#         options = webdriver.ChromeOptions()
+#         options.add_argument("--headless")
+#         web_driver = webdriver.Chrome(
+#             executable_path=r"chromedriver", options=options)
+#     if request.param == "firefox":
+#         options = webdriver.FirefoxOptions()
+#         options.add_argument("--headless")
+#         web_driver = webdriver.Firefox(
+#             executable_path=r"geckodriver", options=options)
+#     request.cls.driver = web_driver
+#     yield
+#     web_driver.close()
